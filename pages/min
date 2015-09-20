@@ -2,11 +2,11 @@ min
 	minpages: abbreviated customizeable version of man pages.
 	For when you just need a miny reminder.
 SYNOPSIS
-	min {[MNY-PAGE] {[OPTION]}} - Operate on page
+	min {[MIN-PAGE] {[OPTION]}} - Operate on page
 USAGES
 	{empty}:
 		Show available min-pages
-	{[MNY-PAGE]}: 
+	{[MIN-PAGE]}: 
 		{page}: The page you want to see
 		-h, --help: Show min-page for min
 		-s, --show: Show available min-pages
