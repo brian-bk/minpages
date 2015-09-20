@@ -2,11 +2,7 @@
 from __future__ import print_function
 
 from glob import glob
-from os.path import join
 from setuptools import setup, find_packages
-
-files = glob('pages/*')
-print(files)
 
 setup(
         name = 'minpages',
@@ -17,7 +13,7 @@ setup(
         author = 'Brian Kleszyk',
         author_email = 'bkleszyk@gmail.com',
         packages = find_packages(),
-        data_files=[('minpages/pages',files)],
+        data_files=[('minpages/pages',glob('pages/*'))],
         entry_points = {
             'console_scripts': ['min = minpages.min:main']
         },
