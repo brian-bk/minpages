@@ -1,0 +1,29 @@
+mny
+<<<<<<< HEAD
+	[M]i[NY] pages: abbreviated customizeable version of man pages.
+=======
+	[M]i[NY] page: abbreviated customizeable version of man pages.
+>>>>>>> efa8a8d39b99858a3ae3f4cf5d635ca71a16c66f
+	For when you just need a miny reminder.
+SYNOPSIS
+	mny {[MNY-PAGE] {[OPTION]}} - Operate on page
+USAGES
+	{empty}:
+		Show available mny-pages
+	{[MNY-PAGE]}: 
+		{page}: The page you want to see
+		-h, --help: Show mny-page for mny
+		-s, --show: Show available mny-pages
+	{... {[OPTION]}}:
+		[w]rite: Write or adjust [mny-page]
+		[d]elete: Delete the [mny-page]
+EXAMPLES
+	mny
+		See available pages
+	mny chmod
+		Show mny-page for chmod
+	mny chmod w
+		Edit/Create page for chmod
+INFO
+	Everything in {} is optional.
+	(i.e. for mny, [mny-page] is optional, and [option] is doubly-optional
