@@ -7,8 +7,9 @@ import os
 import ntpath
 import subprocess
 from click import confirm
+from shutil import copytree
 
-from os.path import join, exists
+from os.path import join, exists, expanduser
 
 class Page():
     def __init__(self, args):
@@ -16,12 +17,17 @@ class Page():
         self.editor = args['editor']
 
         if not exists(self.page_dir):
-            try:
-                os.mkdir(self.page_dir)
-            except OSError as e:
-                msg = "Cannot create page directory: "+self.page_dir+\
-                '\nCheck to make sure parent directory exists'
-                sys.exit(msg)
+            if confirm(
+"""Page directory not yet created at '{page_dir}'.
+Would you like to create it?""".format(
+                page_dir=self.page_dir
+                )):
+                import minpages
+                data_dir = join(minpages.__path__[0],'pages')
+                copytree(data_dir,self.page_dir)
+            else:
+                sys.exit("No page directory, halted")
+
 
         if args['page'] is None:
             self.show_all_pages()

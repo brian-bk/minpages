@@ -1,5 +1,7 @@
 __pycache__
 *.pyc
-/build/
-/dist/
-/minpages.egg-info/
+*swp
+/dist
+/build
+/minpages.egg-info
+

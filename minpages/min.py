@@ -5,7 +5,6 @@ from __future__ import print_function
 import argparse
 import os
 
-
 from os.path import expanduser, join
 
 from .page import Page
@@ -16,8 +15,8 @@ def main():
             )
     
     parser.add_argument('page', nargs='?', help='Which page to view/edit/delete' )
-    parser.add_argument('--edit', help='Edit/create a page', action='store_true')
-    parser.add_argument('--delete', help='Delete a page', action='store_true')
+    parser.add_argument('-e','--edit', help='Edit/create a page', action='store_true')
+    parser.add_argument('-d','--delete', help='Delete a page', action='store_true')
     def_page_dir =  join(expanduser('~'),'.minpages')
     parser.add_argument(
             '--page-dir', 
