@@ -17,13 +17,14 @@ class Page():
         self.editor = args['editor']
 
         if not exists(self.page_dir):
+            import minpages
+            data_dir = join(minpages.__path__[0],'pages')
             if confirm(
 """Page directory not yet created at '{page_dir}'.
-Would you like to create it?""".format(
-                page_dir=self.page_dir
-                )):
-                import minpages
-                data_dir = join(minpages.__path__[0],'pages')
+Would you like to create it from {data_dir}?""".format(
+                    page_dir=self.page_dir,
+                    data_dir=data_dir
+            )):
                 copytree(data_dir,self.page_dir)
             else:
                 sys.exit("No page directory, halted")

@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
         name = 'minpages',
-        version = '0.0.1',
+        version = '0.0.12',
         description = 'An abbreviated man-pages', 
         long_description = """
 A simple way to make a man page or add a reminder""",
@@ -14,11 +14,13 @@ A simple way to make a man page or add a reminder""",
         license='GPL',
         author = 'Brian Kleszyk',
         author_email = 'bkleszyk@gmail.com',
-        py_modules=['minpages'],
-        packages = find_packages(exclude=['tests/*']),
-        data_files=[('minpages/pages',glob('pages/*'))],
+        packages = find_packages(),
+        package_dir={'minpages':'minpages'},
+        package_data={'minpages':['pages/*']},
         entry_points = {
-            'console_scripts': ['min = minpages.min:main']
+            'console_scripts': [
+                'min = minpages.min:main'
+            ]
         },
         install_requires=['click']
 )
