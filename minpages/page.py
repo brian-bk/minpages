@@ -47,7 +47,7 @@ Would you like to create it from {data_dir}?""".format(
             if not(file_name[0] == '.'):
                 print(ntpath.basename(file_name))
         print('-'*50)
-    def show_page(self, page):
+    def show_page(self, page, prompt=True):
         file_name = join(self.page_dir, page)
         if exists(file_name):
             print(page+':')
@@ -57,7 +57,7 @@ Would you like to create it from {data_dir}?""".format(
             print('-'*50)
         else:
             print("Page '"+page+"' does not exist")
-            if confirm("Would you like to create it?"):
+            if prompt and confirm("Would you like to create it?"):
                 self.edit_page(page)
     def edit_page(self, page):
         file_name = join(self.page_dir, page)
@@ -66,7 +66,7 @@ Would you like to create it from {data_dir}?""".format(
         except OSError:
             print("Editor: '"+self.editor+"' does not exist",\
                     file=sys.stderr)
-        self.show_page(page)
+        self.show_page(page, prompt=False)
     def delete_page(self, page):
         file_name = join(self.page_dir, page)
         if exists(file_name):
