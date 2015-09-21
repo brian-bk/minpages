@@ -26,7 +26,7 @@ def main():
             default=def_page_dir
             )
     try:
-        def_editor = os.environ['VISUAL']
+        def_editor = os.environ['EDITOR']
     except KeyError:
         def_editor = 'vi'
     parser.add_argument(
