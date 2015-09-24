@@ -6,6 +6,7 @@ Works on linux. An abbreviated form a man-pages. You can easily edit or add min-
 ## INSTALLATION:
 --------
 Two ways to install minpages:
+
 1. Using pip
   * `pip install minpages`
 2. Compile from source
