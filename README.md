@@ -11,7 +11,7 @@ Two ways to install minpages:
   * `pip install minpages`
 2. Compile from source
   * `git clone https://github.com/brian-bk/minpages.git`
-  * `cd minpages`
+  * `cd minpages/`
   * `python setup.py install`
 
 Installation creates the executable `min`.
